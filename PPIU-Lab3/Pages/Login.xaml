@@ -1,0 +1,34 @@
+﻿<Page x:Class="PPIU_Lab3.Pages.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PPIU_Lab3.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="400"
+      Title="Login">
+    <Grid>
+        <Grid Name="mainGrid" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Logowanie" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="35"/>
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
+                <TextBox Name="tbLogin" Width="100" Background="White" />
+                <TextBox Name="tbPassword" Background="White" Margin="0,5,0,0"/>
+            </StackPanel>
+            <Label Content="Login" HorizontalAlignment="Left" Margin="99,144,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+            <Label Content="Hasło" HorizontalAlignment="Left" Margin="99,15,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <Button Content="Zaloguj" Name="btnLogin" HorizontalAlignment="Left" Margin="150,67,0,0" Grid.Row="1" VerticalAlignment="Top" Width="61" Height="23" Click="btnLogin_Click"/>
+            <Button Content="Zarejestruj" Name="btnRegister" HorizontalAlignment="Left" Margin="150,100,0,0" Grid.Row="1" VerticalAlignment="Top"  Width="61" Height="23" Click="btnRegister_Click"/>
+            <Label Content="Domyślni użytkownicy: user(user;user) admin(admin;admin) " Margin="11,202,50,104" Grid.Row="1"/>
+
+
+
+
+        </Grid>
+    </Grid>
+</Page>
