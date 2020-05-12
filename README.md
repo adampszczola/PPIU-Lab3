@@ -1,2 +1,2 @@
 # PPIU-Lab3
-Zadanie wykonane na potrzeb przedmiotu "Podstawy programowania interfejsów użytkownika"
+Zadanie wykonane na potrzeby przedmiotu "Podstawy programowania interfejsów użytkownika"
