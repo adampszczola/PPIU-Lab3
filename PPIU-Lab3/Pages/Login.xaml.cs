@@ -22,26 +22,54 @@ namespace PPIU_Lab3.Pages
     /// </summary>
     public partial class Login : Page
     {
+        Session session = new Session();
         DataBase databaseobj;
-        bool successLogin = false;
-        bool successPassword = false;       
+        bool successLogin = false;             
         int loginAttempt = 3;
+
         DateTime dateTime = new DateTime();
 
         public Login()
         {
             InitializeComponent();
             databaseobj = new DataBase();
+            checkncreate();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            SQLiteCommand query1 = new SQLiteCommand(databaseobj.Connection);
+            query1.CommandText = "SELECT Id_User,Uprawnienia FROM User WHERE Login='"+tbLogin.Text+"' AND Haslo='"+tbPassword.Text+"'";
+            SQLiteDataReader reader = query1.ExecuteReader();
 
+            if (loginAttempt <= 0)
+            {
+                MessageBox.Show("Wykorzystano już wszystkie próby logowania.");
+            }
+            else 
+            {
+                login();
+            }
+            if (successLogin == true)
+            {
+                if (reader.GetString(1) == "admin")
+                {
+                    session._id_user = reader.GetInt32(0);
+                    // frame to admin page
+
+                }
+                else
+                {
+                    session._id_user = reader.GetInt32(0);
+                    // frame to user page
+                }
+            }
+            
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-
+            //frame to register page
         }
         void checkncreate()
         {
@@ -89,8 +117,35 @@ namespace PPIU_Lab3.Pages
             }
             databaseobj.Close();
         }
-
-
+        
+       void login()
+        {
+            SQLiteCommand query1 = new SQLiteCommand(databaseobj.Connection);
+            databaseobj.Open();
+            query1.CommandText = "SELECT Login FROM User WHERE Login='"+tbLogin.Text+"'";
+            query1.ExecuteNonQuery();
+            if(query1.ExecuteScalar() != null)
+            {
+                query1.CommandText = "SELECT Haslo FROM User WHERE Login='"+tbLogin.Text+"' AND Haslo='"+tbPassword.Text+"'";
+                if (query1.ExecuteScalar() != null)
+                {
+                    successLogin = true;
+                }
+                else
+                {
+                    MessageBox.Show("Podane hasło jest nieprawidłowe.");
+                    loginAttempt--;
+                    lblAttempts.Content = "Pozostałe próby logowania:" + loginAttempt;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Podany login jest nieprawidłowy.");
+                loginAttempt--;
+                lblAttempts.Content = "Pozostałe próby logowania:" + loginAttempt;
+            }
+            databaseobj.Close();
+        }
 
     }
 }

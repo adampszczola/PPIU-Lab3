@@ -25,6 +25,7 @@
             <Button Content="Zaloguj" Name="btnLogin" HorizontalAlignment="Left" Margin="150,67,0,0" Grid.Row="1" VerticalAlignment="Top" Width="61" Height="23" Click="btnLogin_Click"/>
             <Button Content="Zarejestruj" Name="btnRegister" HorizontalAlignment="Left" Margin="150,100,0,0" Grid.Row="1" VerticalAlignment="Top"  Width="61" Height="23" Click="btnRegister_Click"/>
             <Label Content="Domyślni użytkownicy: user(user;user) admin(admin;admin) " Margin="11,202,50,104" Grid.Row="1"/>
+            <Label Content="Pozostałe próby logowania:3" Name="lblAttempts" HorizontalAlignment="Left" Margin="99,36,0,0" Grid.Row="1" VerticalAlignment="Top"/>
 
 
 
