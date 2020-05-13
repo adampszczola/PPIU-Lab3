@@ -69,7 +69,7 @@ namespace PPIU_Lab3.Pages
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            //frame to register page
+            (App.Current.MainWindow as MainWindow).rootFrame.Navigate(new Pages.Register());
         }
         void checkncreate()
         {

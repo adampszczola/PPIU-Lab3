@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PPIU_Lab3"
         mc:Ignorable="d"
-        Title="Lab3" Height="500" Width="400">
+        Title="Lab3" Height="550" Width="450">
     <Frame x:Name="rootFrame" NavigationUIVisibility="Hidden"/>
 </Window>

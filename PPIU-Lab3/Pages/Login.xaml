@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PPIU_Lab3.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="400"
+      d:DesignHeight="550" d:DesignWidth="450"
       Title="Login">
     <Grid>
         <Grid Name="mainGrid" Background="White">
