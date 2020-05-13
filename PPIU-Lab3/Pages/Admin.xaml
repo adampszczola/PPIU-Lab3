@@ -1,0 +1,32 @@
+﻿<Page x:Class="PPIU_Lab3.Pages.Admin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PPIU_Lab3.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="450"
+      Title="Admin">
+
+    <Grid>
+        <Grid Name="mainGrid" Background="White">
+            <Label Content="Obsługa użytkowników" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Button Content="Dodawanie" HorizontalAlignment="Center" Margin="0,78,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Content="Usuwanie" HorizontalAlignment="Center" Margin="0,103,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Content="Modyfikowanie" HorizontalAlignment="Center" Margin="0,128,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Content="Obsługa wydarzeń" HorizontalAlignment="Center" Margin="0,180,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Button Content="Dodawanie" HorizontalAlignment="Center" Margin="0,228,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Content="Usuwanie" HorizontalAlignment="Center" Margin="0,253,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Content="Modyfikacja" HorizontalAlignment="Center" Margin="0,278,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Content="Obsługa zapisów  na wydarzenie" HorizontalAlignment="Center" Margin="0,331,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Button Content="Potwierdzenie" HorizontalAlignment="Center" Margin="0,384,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Content="Odrzucenie" HorizontalAlignment="Center" Margin="0,409,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Content="Wróć do logowania" HorizontalAlignment="Left" Margin="46,474,0,0" VerticalAlignment="Top" Height="33" Width="115" Click="btnBack_Click"/>
+
+
+
+        </Grid>
+
+
+    </Grid>
+</Page>

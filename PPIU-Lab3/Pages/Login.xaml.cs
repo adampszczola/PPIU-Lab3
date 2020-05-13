@@ -27,7 +27,8 @@ namespace PPIU_Lab3.Pages
         bool successLogin = false;             
         int loginAttempt = 3;
 
-        DateTime dateTime = new DateTime();
+        DateTime dateTime = DateTime.Now;
+        
 
         public Login()
         {
@@ -38,31 +39,41 @@ namespace PPIU_Lab3.Pages
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            SQLiteCommand query1 = new SQLiteCommand(databaseobj.Connection);
-            query1.CommandText = "SELECT Id_User,Uprawnienia FROM User WHERE Login='"+tbLogin.Text+"' AND Haslo='"+tbPassword.Text+"'";
-            SQLiteDataReader reader = query1.ExecuteReader();
+            
 
             if (loginAttempt <= 0)
             {
                 MessageBox.Show("Wykorzystano już wszystkie próby logowania.");
+                
             }
             else 
             {
-                login();
+                logIn();
+                
             }
             if (successLogin == true)
             {
+                databaseobj.Open();
+                SQLiteCommand query1 = new SQLiteCommand(databaseobj.Connection);
+                query1.CommandText = "SELECT Id_User,Uprawnienia FROM User WHERE Login='" + tbLogin.Text + "' AND Haslo='" + tbPassword.Text + "'";
+                query1.ExecuteNonQuery();
+                SQLiteDataReader reader = query1.ExecuteReader();
+                reader.Read();
                 if (reader.GetString(1) == "admin")
                 {
                     session._id_user = reader.GetInt32(0);
-                    // frame to admin page
+                    (App.Current.MainWindow as MainWindow).rootFrame.Navigate(new Pages.Admin());
+
 
                 }
                 else
                 {
                     session._id_user = reader.GetInt32(0);
-                    // frame to user page
+                    (App.Current.MainWindow as MainWindow).rootFrame.Navigate(new Pages.User());
+
                 }
+                databaseobj.Close();
+
             }
             
         }
@@ -81,8 +92,9 @@ namespace PPIU_Lab3.Pages
             query1.ExecuteNonQuery();
             query2.ExecuteNonQuery();
             var count = query1.ExecuteScalar();
+            
 
-            if(count != null)
+            if (count == null)
             {
                 
                 string createQuery = "INSERT INTO User (`Imie`, `Nazwisko`, `Stanowisko`, `Plec`, `Email`, `Login`, `Haslo`, `Aktywne`, `DataRejestracji`,`Uprawnienia`) VALUES (@Imie, @Nazwisko, @Stanowisko, @Plec, @Email, @Login, @Haslo, @Aktywne, @DataRejestracji, @Uprawnienia)";
@@ -97,10 +109,11 @@ namespace PPIU_Lab3.Pages
                 query3.Parameters.AddWithValue("@Aktywne", "true");
                 query3.Parameters.AddWithValue("@DataRejestracji", dateTime.ToString("dd/MM/yyyy"));
                 query3.Parameters.AddWithValue("@Uprawnienia", "admin");
+                query3.ExecuteNonQuery();
                 
             }
             count = query2.ExecuteScalar();
-            if(count != null)
+            if(count == null)
             {
                 string createQuery = "INSERT INTO User (`Imie`, `Nazwisko`, `Stanowisko`, `Plec`, `Email`, `Login`, `Haslo`, `Aktywne`, `DataRejestracji`,`Uprawnienia`) VALUES (@Imie, @Nazwisko, @Stanowisko, @Plec, @Email, @Login, @Haslo, @Aktywne, @DataRejestracji, @Uprawnienia)";
                 SQLiteCommand query4 = new SQLiteCommand(createQuery, databaseobj.Connection);
@@ -114,11 +127,12 @@ namespace PPIU_Lab3.Pages
                 query4.Parameters.AddWithValue("@Aktywne", "true");
                 query4.Parameters.AddWithValue("@DataRejestracji", dateTime.ToString("dd/MM/yyyy"));
                 query4.Parameters.AddWithValue("@Uprawnienia", "user");
+                query4.ExecuteNonQuery();
             }
             databaseobj.Close();
         }
         
-       void login()
+       void logIn()
         {
             SQLiteCommand query1 = new SQLiteCommand(databaseobj.Connection);
             databaseobj.Open();

@@ -18,12 +18,12 @@
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
                 <TextBox Name="tbLogin" Width="100" Background="White" />
-                <TextBox Name="tbPassword" Background="White" Margin="0,5,0,0"/>
+                <PasswordBox Name="tbPassword" Background="White" Margin="0,5,0,0"/>
             </StackPanel>
             <Label Content="Login" HorizontalAlignment="Left" Margin="99,144,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
             <Label Content="Hasło" HorizontalAlignment="Left" Margin="99,15,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-            <Button Content="Zaloguj" Name="btnLogin" HorizontalAlignment="Left" Margin="150,67,0,0" Grid.Row="1" VerticalAlignment="Top" Width="61" Height="23" Click="btnLogin_Click"/>
-            <Button Content="Zarejestruj" Name="btnRegister" HorizontalAlignment="Left" Margin="150,100,0,0" Grid.Row="1" VerticalAlignment="Top"  Width="61" Height="23" Click="btnRegister_Click"/>
+            <Button Content="Zaloguj" Name="btnLogin" HorizontalAlignment="Center" Margin="0,67,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Height="23" Click="btnLogin_Click"/>
+            <Button Content="Zarejestruj" Name="btnRegister" HorizontalAlignment="Center" Margin="0,102,0,0" Grid.Row="1" VerticalAlignment="Top"  Width="100" Height="23" Click="btnRegister_Click"/>
             <Label Content="Domyślni użytkownicy: user(user;user) admin(admin;admin) " Margin="11,202,50,104" Grid.Row="1"/>
             <Label Content="Pozostałe próby logowania:3" Name="lblAttempts" HorizontalAlignment="Left" Margin="99,36,0,0" Grid.Row="1" VerticalAlignment="Top"/>
 

@@ -29,7 +29,7 @@ namespace PPIU_Lab3.Pages
         bool correctLogin = false;
         DataBase databaseobj = new DataBase();
 
-        DateTime dateTime = new DateTime();
+        DateTime dateTime = DateTime.Now;
         public Register()
         {
             InitializeComponent();

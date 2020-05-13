@@ -39,3 +39,7 @@ E:\Uczelnia\Interfejsy\PPIU-Lab3\PPIU-Lab3\obj\Debug\netcoreapp3.1\Pages\Login.g
 E:\Uczelnia\Interfejsy\PPIU-Lab3\PPIU-Lab3\obj\Debug\netcoreapp3.1\Pages\Login.baml
 E:\Uczelnia\Interfejsy\PPIU-Lab3\PPIU-Lab3\obj\Debug\netcoreapp3.1\Pages\Register.g.cs
 E:\Uczelnia\Interfejsy\PPIU-Lab3\PPIU-Lab3\obj\Debug\netcoreapp3.1\Pages\Register.baml
+E:\Uczelnia\Interfejsy\PPIU-Lab3\PPIU-Lab3\obj\Debug\netcoreapp3.1\Pages\Admin.g.cs
+E:\Uczelnia\Interfejsy\PPIU-Lab3\PPIU-Lab3\obj\Debug\netcoreapp3.1\Pages\User.g.cs
+E:\Uczelnia\Interfejsy\PPIU-Lab3\PPIU-Lab3\obj\Debug\netcoreapp3.1\Pages\Admin.baml
+E:\Uczelnia\Interfejsy\PPIU-Lab3\PPIU-Lab3\obj\Debug\netcoreapp3.1\Pages\User.baml
