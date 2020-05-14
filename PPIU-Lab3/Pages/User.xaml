@@ -29,8 +29,9 @@
                 <ComboBoxItem Name="bezGlutenu" Content="Bez glutenu"/>
             </ComboBox>
             <Label Content="Wyżywienie" HorizontalAlignment="Left" Margin="93,240,0,0" VerticalAlignment="Top"/>
-            <Button Content="Zapisz się" HorizontalAlignment="Left" Margin="225,287,0,0" VerticalAlignment="Top" Width="75" Name="tbJoin" Click="btnJoin_Click"/>
+            <Button Content="Zapisz się" HorizontalAlignment="Left" Margin="225,287,0,0" VerticalAlignment="Top" Width="75" Name="btnJoin" Click="btnJoin_Click" IsEnabled="True" Visibility="Visible"/>
             <Button Content="Wróć do logowania" HorizontalAlignment="Left" Margin="46,422,0,0" VerticalAlignment="Top" Height="26" Width="119" Click="btnBack_Click"/>
+            <Button Content="Wypisz się" Visibility="Hidden" HorizontalAlignment="Left" Margin="225,287,0,0" VerticalAlignment="Top" Width="75" Name="btnLeave" Click="btnLeave_Click" IsEnabled="False"/>
 
 
 

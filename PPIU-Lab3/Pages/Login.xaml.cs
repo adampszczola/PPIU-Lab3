@@ -32,7 +32,7 @@ namespace PPIU_Lab3.Pages
 
         public Login()
         {
-            InitializeComponent();
+            InitializeComponent();           
             databaseobj = new DataBase();
             checkncreate();
         }
@@ -54,8 +54,8 @@ namespace PPIU_Lab3.Pages
             if (successLogin == true)
             {
                 databaseobj.Open();
-                SQLiteCommand query1 = new SQLiteCommand(databaseobj.Connection);
-                query1.CommandText = "SELECT Id_User,Uprawnienia FROM User WHERE Login='" + tbLogin.Text + "' AND Haslo='" + tbPassword.Text + "'";
+                SQLiteCommand query1 = new SQLiteCommand(databaseobj.Connection);              
+                query1.CommandText = "SELECT Id_User,Uprawnienia FROM User WHERE Login='" + tbLogin.Text + "' AND Haslo='" + tbPassword.Password + "'";
                 query1.ExecuteNonQuery();
                 SQLiteDataReader reader = query1.ExecuteReader();
                 reader.Read();
@@ -69,7 +69,7 @@ namespace PPIU_Lab3.Pages
                 else
                 {
                     session._id_user = reader.GetInt32(0);
-                    (App.Current.MainWindow as MainWindow).rootFrame.Navigate(new Pages.User());
+                    (App.Current.MainWindow as MainWindow).rootFrame.Navigate(new Pages.User(session));
 
                 }
                 databaseobj.Close();
@@ -140,7 +140,7 @@ namespace PPIU_Lab3.Pages
             query1.ExecuteNonQuery();
             if(query1.ExecuteScalar() != null)
             {
-                query1.CommandText = "SELECT Haslo FROM User WHERE Login='"+tbLogin.Text+"' AND Haslo='"+tbPassword.Text+"'";
+                query1.CommandText = "SELECT Haslo FROM User WHERE Login='"+tbLogin.Text+"' AND Haslo='"+tbPassword.Password+"'";
                 if (query1.ExecuteScalar() != null)
                 {
                     successLogin = true;

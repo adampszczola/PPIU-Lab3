@@ -22,6 +22,7 @@
             <Button Content="Potwierdzenie" HorizontalAlignment="Center" Margin="0,384,0,0" VerticalAlignment="Top" Width="100"/>
             <Button Content="Odrzucenie" HorizontalAlignment="Center" Margin="0,409,0,0" VerticalAlignment="Top" Width="100"/>
             <Button Content="Wróć do logowania" HorizontalAlignment="Left" Margin="46,474,0,0" VerticalAlignment="Top" Height="33" Width="115" Click="btnBack_Click"/>
+            <Label Content="this is just a preview of an admin panel" HorizontalAlignment="Left" Margin="30,453,0,0" VerticalAlignment="Top" FontSize="8"/>
 
 
 
