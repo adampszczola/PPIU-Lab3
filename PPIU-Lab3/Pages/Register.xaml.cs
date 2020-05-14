@@ -44,7 +44,7 @@ namespace PPIU_Lab3.Pages
         {
             //https://stackoverflow.com/questions/29684210/most-efficient-way-to-see-if-any-of-textboxes-are-empty-c-sharp
             var tbCollection = new[] { tbName, tbSurname, tbEmail, tbJob, tbPassword, tbPasswordRepeat, tbLogin };
-            bool isEmpty = tbCollection.Any(t => String.IsNullOrWhiteSpace(t.Text));
+            bool isEmpty = !tbCollection.Any(t => String.IsNullOrWhiteSpace(t.Text));
 
             if (isEmpty && correctEmail && correctLogin && samePassword)
             {
